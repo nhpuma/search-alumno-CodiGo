@@ -6,7 +6,7 @@ namespace search_alumno_CodiGo
 {
     class Program
     {
-        static string minombre;
+        
         static string[] alumnos = { "72117500", "74119617", "77657476", "71736721", "70652084", "71521063", "75211693", "43474669", "73131641", "43470033", "70748476", "72815887", "74690111", "47862719", "72313903", "72406945" };
 
         static void Main(string[] args)
