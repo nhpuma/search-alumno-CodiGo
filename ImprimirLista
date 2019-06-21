@@ -1,0 +1,12 @@
+static void ImprimirLista(string[] lista){
+  string xxx;
+          for(int i=0; i< lista.Length;i++)
+          {
+            xxx = lista[i];
+            string  nombres = ConsultarReniec(xxx);
+            string[] fullname = DividirNombres(nombres);
+            Imprimir(fullname);
+          }
+
+   }
+  
