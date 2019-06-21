@@ -1,0 +1,45 @@
+//Luis Ope Roman
+
+public static String[] DividirNombre(String nombres){
+			
+			nombres = nombres.ToLower();
+
+			nombres = nombres.Replace("de ", "de@");
+			nombres = nombres.Replace("del ", "del@");
+			nombres = nombres.Replace("la ", "la@");
+			nombres = nombres.Replace("el ", "el@");
+			nombres = nombres.Replace("las ", "las@");
+			nombres = nombres.Replace("los ", "los@");
+			nombres = nombres.Replace("san ", "san@");
+//			
+//			
+			string temp_a = (nombres.Substring(0,nombres.LastIndexOf("|"))) + "|_|";
+			
+			String[] Apellidos = (temp_a.Substring(0,temp_a.LastIndexOf("|"))).Split('|');
+			
+			int temp = (nombres.Length-1);
+			
+			//Console.WriteLine((nombres.Length-1) - nombres.LastIndexOf("|")+1 );
+			
+			//nombres = "|__|" + nombres.Substring(nombres.LastIndexOf("|")+1,(nombres.Length-1) - nombres.LastIndexOf("|") );
+			
+			String[] Nombres = (nombres.Substring(nombres.LastIndexOf("|")+1,(nombres.Length-1) - nombres.LastIndexOf("|") )).Split(' ');
+//				(nombres.LastIndexOf("|"));
+			
+			
+//			int weith = Nombres.Length;
+//			Array.Resize<String>(ref Nombres, weith + Apellidos.Length);
+//			Array.Copy(Apellidos, 0, Nombres, weith, Apellidos.Length);
+			
+			int weith2 = Apellidos.Length;
+			Array.Resize<String>(ref Apellidos, weith2 + Nombres.Length);
+			Array.Copy(Nombres, 0, Apellidos, weith2, Nombres.Length);
+			
+//			string[]
+			
+			for(int a=0;a<Apellidos.Length;++a){
+				Apellidos[a] = Apellidos[a].Replace("@", " ");
+			}
+			
+			return Apellidos;
+		}
