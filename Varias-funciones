@@ -1,0 +1,35 @@
+static string[] DividirNombres(string nombres)
+   {
+        //string fullName = nombres; //
+        var names = nombres.Split('|'); 
+        //string ApPaterno = names[0]; 
+        //string ApMaterno = names[1]; 
+        //string nombress = names[2]; 
+
+        //string name = nombress;
+        //var separar = name.Split(" ");
+        //Console.WriteLine(separar.Length);//
+
+       // Console.WriteLine("Nombres: {0} - #{1} Nombre(s) ",nombress,separar.Length);
+        //Console.WriteLine("Apellidos: {0} {1} -#{2} Apellidos",ApPaterno,ApMaterno,  //names.Length-1);
+
+        return names;
+   }
+   
+   //________________________________________________________________________________________________________________//
+   
+    static void Imprimir(string[] names)
+   {
+
+        string ApPaterno = names[0]; 
+        string ApMaterno = names[1]; 
+        string nombress = names[2]; 
+
+        string name = nombress;
+        var separar = name.Split(" ");
+        //Console.WriteLine(separar.Length);//
+
+        Console.WriteLine("Nombres: {0} - #{1} Nombre(s) ",nombress,separar.Length);
+        Console.WriteLine("Apellidos: {0} {1} -#{2} Apellidos",ApPaterno,ApMaterno,  names.Length-1);
+
+   }
