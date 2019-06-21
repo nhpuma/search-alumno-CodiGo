@@ -6,66 +6,52 @@ namespace search_alumno_CodiGo
 {
     class Program
     {
+        static string minombre;
+        static string[] alumnos = { "72117500", "74119617", "77657476", "71736721", "70652084", "71521063", "75211693", "43474669", "73131641", "43470033", "70748476", "72815887", "74690111", "47862719", "72313903", "72406945" };
+
         static void Main(string[] args)
         {
             String dni;
-            string[] alumnos = { "72117500", "74119617", "77657476", "71736721", "70652084", "71521063", "75211693", "43474669", "73131641", "43470033", "70748476", "72815887", "74690111", "47862719", "72313903", "72406945" };
+            //string[] alumnos = { "72117500", "74119617", "77657476", "71736721", "70652084", "71521063", "75211693", "43474669", "73131641", "43470033", "70748476", "72815887", "74690111", "47862719", "72313903", "72406945" };
 
             Console.WriteLine("=== VERIFICACIÓN DE ALUMNO ===");
             Console.Write("Ingrese el número de DNI: ");
             dni = Console.ReadLine().ToString();
 
-            // Llamada a la función buscar
-            //bool isAlumno = buscarAlumno(dni);
+           
+            bool isAlumno;
 
-            /*if (buscarAlumno(dni))
+            // Llamada a la función buscar
+            isAlumno = buscarAlumno(dni);
+            if (isAlumno)
             {
-               
+                    
+                Console.WriteLine("Estamos validando en RENIEC");
+
+                Imprimir(DividirNombres(ConsultarReniec(dni)));
+
+                ImprimirLista(alumnos);
 
             }
             else
             {
-                Console.WriteLine("Lo sentimos no es alumno de Código");
-                Console.Write("Vuelva a ingresar DNI: ");
-                dni = Console.ReadLine().ToString();
-                
-            }*/
-            bool isAlumno;
+                while(isAlumno == false) { 
+                    Console.WriteLine("Lo sentimos no es alumno de Código");
+                    Console.Write("Vuelva a ingresar DNI: ");
+                    dni = Console.ReadLine().ToString();
+                    isAlumno = buscarAlumno(dni);
+                    if (isAlumno)
+                    {
 
-            
-                /*Console.WriteLine("Lo sentimos no es alumno de Código");
-                Console.Write("Vuelva a ingresar DNI: ");
-                dni = Console.ReadLine().ToString();*/
-                isAlumno = buscarAlumno(dni);
-                if (isAlumno)
-                {
-                    
                         Console.WriteLine("Estamos validando en RENIEC");
 
                         Imprimir(DividirNombres(ConsultarReniec(dni)));
 
-                ImprimirLista();
+                        ImprimirLista(alumnos);
 
-                }
-                else
-                {
-                    while(isAlumno == false) { 
-                        Console.WriteLine("Lo sentimos no es alumno de Código");
-                        Console.Write("Vuelva a ingresar DNI: ");
-                        dni = Console.ReadLine().ToString();
-                        isAlumno = buscarAlumno(dni);
-                        if (isAlumno)
-                        {
-
-                            Console.WriteLine("Estamos validando en RENIEC");
-
-                            Imprimir(DividirNombres(ConsultarReniec(dni)));
-
-                        ImprimirLista();
-
-                        }
                     }
                 }
+            }
 
             
         }
@@ -73,7 +59,7 @@ namespace search_alumno_CodiGo
         //Alexander y Luis
         static bool buscarAlumno(String dni)
         {
-            string[] alumnos = {"72117500", "74119617", "77657476", "71736721", "70652084", "71521063", "75211693", "43474669", "73131641", "43470033", "70748476", "72815887", "74690111", "47862719", "72313903", "72406945"}; 
+            //string[] alumnos = {"72117500", "74119617", "77657476", "71736721", "70652084", "71521063", "75211693", "43474669", "73131641", "43470033", "70748476", "72815887", "74690111", "47862719", "72313903", "72406945"}; 
             int cont = 0;
             //string dni = Console.ReadLine();
             for (int i = 0; i < alumnos.Length; i++)
@@ -133,10 +119,10 @@ namespace search_alumno_CodiGo
             return names;
         }
 
-        static void ImprimirLista()
+        static void ImprimirLista(string[] lista)
         {
             string alumno;
-            string[] lista = { "72117500", "74119617", "77657476", "71736721", "70652084", "71521063", "75211693", "43474669", "73131641", "43470033", "70748476", "72815887", "74690111", "47862719", "72313903", "72406945" };
+            //string[] lista = alumnos;
 
             Console.WriteLine();
             Console.WriteLine("=============REPORTE=============");
