@@ -1,0 +1,18 @@
+//POR : TICONA QUISPE,JORGE ERNESTO//
+  static string ConsultarReniec(string dni)
+  {
+    string html = string.Empty;
+		string url = "http://aplicaciones007.jne.gob.pe/srop_publico/Consulta/Afiliado/GetNombresCiudadano?DNI="+dni;
+		
+		HttpWebRequest request = (HttpWebRequest) WebRequest.Create(url);
+		
+		using (HttpWebResponse response = (HttpWebResponse) request.GetResponse())
+		using (Stream stream = response.GetResponseStream())
+		using (StreamReader reader = new StreamReader(stream))
+		{
+			html = reader.ReadToEnd();
+		}
+
+    return html;
+
+  }
